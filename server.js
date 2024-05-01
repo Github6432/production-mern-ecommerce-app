@@ -12,7 +12,7 @@ import path from 'path';
 //rest object
 const app = express();
 //port
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 10000;
 
 
 //configure env
