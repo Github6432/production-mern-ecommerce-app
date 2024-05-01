@@ -8,16 +8,15 @@ import categoryRoute from './routes/categoryRoute.js'
 import productRoute from './routes/productRoute.js'
 import cors from 'cors';
 import path from 'path';
-import { fileURLToPath } from './client/build'; /
 
+import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
+// Get directory name using import.meta.url
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 //rest object
 const app = express();
 //port
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 3000;
 
 
 //configure env
@@ -38,8 +37,10 @@ app.use("/api/v1/product", productRoute);
 
 //rest api
 app.use('*', function(req, res) {
-    res.sendFile(path.join(__dirname, './client/build/index.html'))
+    res.sendFile(path.resolve(__dirname, './client/build/index.html'))
 })
+
+
 //port
 //res Listen
 app.listen(PORT, () =>{
