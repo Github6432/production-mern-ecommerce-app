@@ -8,7 +8,7 @@ import categoryRoute from './routes/categoryRoute.js'
 import productRoute from './routes/productRoute.js'
 import cors from 'cors';
 import path from 'path';
-import { fileURLToPath } from 'url'; /
+import { fileURLToPath } from './client/build'; /
 
 
 const __filename = fileURLToPath(import.meta.url);
